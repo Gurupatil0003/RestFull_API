@@ -113,7 +113,7 @@ Let's understand the meaning of each word in the REST acronym.
 - An idempotent method is a method that produces the same results no matter how many times is executed. These are GET, PUT and DELETE.
 
 
-##2 . Representations
+## 2 . Representations
 
 - Restful services focus on resources and providing access to the resources.
 - A resource can be easily thought of as an object in OOP.
