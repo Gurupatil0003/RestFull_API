@@ -90,3 +90,26 @@ SQL databases store data in forms of the tables made up of rows and columns and 
 have a dynamic schema for unstructured data and store data in different ways ranging from column-based(Apache Cassandra), document-based(MongoDB), graph-based(Neo4j), or as a key-value store (Redis).
 This provides the flexibility to store data without a predefined structure and versatility to add fields to the data structure on the go.
 Being schemaless is the key distinction of NoSQL databases, and it also makes them better suited for distributed systems.
+
+
+## Here Is The Small Example Then You will understand This
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# Dummy data for books
+books = [
+    {"id": 1, "title": "To Kill a Mockingbird", "author": "Harper Lee", "year": 1960},
+    {"id": 2, "title": "1984", "author": "George Orwell", "year": 1949},
+    {"id": 3, "title": "Pride and Prejudice", "author": "Jane Austen", "year": 1813}
+]
+
+# Endpoint to retrieve all books
+@app.route('/books', methods=['GET'])
+def get_books():
+    return jsonify(books)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
