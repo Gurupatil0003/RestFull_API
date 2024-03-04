@@ -217,6 +217,28 @@ def get_books():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+### A program that creates a simple RESTful API that returns a list of users in JSON
+format.
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# Dummy user data
+users = [
+    {"id": 1, "name": "Guru", "age": 23},
+    {"id": 2, "name": "Mounesh", "age": 23},
+    {"id": 3, "name": "Mgpatils", "age": 23}
+]
+
+@app.route('/users', methods=['GET'])
+def get_users():
+    return jsonify(users)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
  ## Square Operation
 
 ```python
