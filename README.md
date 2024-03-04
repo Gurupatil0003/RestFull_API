@@ -166,16 +166,14 @@ Once the API specs are put in place, prototyping helps you visualize the API bef
 Authentication involves the verification process to know who the person is while authorization involves authoring an authenticated user to keep a check on resources allowed to access using Access Control List(ACL)
 ## 6. SQL Databases
 
-SQL databases use SQL for data manipulation and definition.
-SQL systems work great when the data in use needs to be relational and the schema is predefined.
-SQL databases store data in forms of the tables made up of rows and columns and vertically scalable.
-7. NoSQL Databases
+- SQL databases use SQL for data manipulation and definition.
+- SQL systems work great when the data in use needs to be relational and the schema is predefined.
+- SQL databases store data in forms of the tables made up of rows and columns and vertically scalable.
+## 7. NoSQL Databases
 
-## NoSQL databases
-
-have a dynamic schema for unstructured data and store data in different ways ranging from column-based(Apache Cassandra), document-based(MongoDB), graph-based(Neo4j), or as a key-value store (Redis).
-This provides the flexibility to store data without a predefined structure and versatility to add fields to the data structure on the go.
-Being schemaless is the key distinction of NoSQL databases, and it also makes them better suited for distributed systems.
+- have a dynamic schema for unstructured data and store data in different ways ranging from column-based(Apache Cassandra), document-based(MongoDB), graph-based(Neo4j), or as a key-value store (Redis).
+- This provides the flexibility to store data without a predefined structure and versatility to add fields to the data structure on the go.
+- Being schemaless is the key distinction of NoSQL databases, and it also makes them better suited for distributed systems.
 
 
 ## Here Is The Small Example Then You will understand This
