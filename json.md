@@ -14,9 +14,9 @@
 - Square brackets hold arrays
 
 ## JSON Objects
-JSON objects are written inside curly braces.
+- JSON objects are written inside curly braces.
 
-Just like in JavaScript, objects can contain multiple name/value pairs:
+- Just like in JavaScript, objects can contain multiple name/value pairs:
 ```python
 {"firstName":"John", "lastName":"Doe"}
 ```
