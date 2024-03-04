@@ -179,6 +179,8 @@ Being schemaless is the key distinction of NoSQL databases, and it also makes th
 
 
 ## Here Is The Small Example Then You will understand This
+
+# Example 1
 ```python
 from flask import Flask
 from flask_restful import Api, Resource
@@ -195,6 +197,8 @@ api.add_resource(HelloWorld, '/hello')
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+# Example 2
 ```python
 from flask import Flask, jsonify
 
