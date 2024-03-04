@@ -334,3 +334,48 @@ def delete_book(book_id):
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+```python
+
+from flask import Flask, request
+from flask_restful import Api, Resource
+from marshmallow import Schema, fields, ValidationError
+
+app = Flask(__name__)
+api = Api(app)
+
+class UserSchema(Schema):
+    username = fields.Str(required=True)
+    email = fields.Email(required=True)
+
+class UserResource(Resource):
+    def get(self):
+        # Implement logic to retrieve and return user data
+        # For demonstration, let's return dummy data
+        users = [
+            {"username": "user1", "email": "user1@example.com"},
+            {"username": "user2", "email": "user2@example.com"}
+        ]
+        return users, 200
+
+    def post(self):
+        # Get user data from form parameters or request JSON
+        json_data = request.get_json()
+        username = json_data.get('username')
+        email = json_data.get('email')
+
+        try:
+            # Validate user data
+            user_data = UserSchema().load({"username": username, "email": email})
+        except ValidationError as err:
+            # Handle validation errors
+            return {"message": "Validation error", "errors": err.messages}, 400
+        
+        # Process valid data (in this example, just return the data)
+        return user_data, 201
+
+api.add_resource(UserResource, '/user')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
