@@ -11,9 +11,9 @@ Let's understand the meaning of each word in the REST acronym.
 ![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/rest-api.png/)
 
 
-Features of REST Overview
+-Features of REST Overview
 
-Uniform Interface
+-Uniform Interface
 Representations
 Messages
 Links between resources
@@ -24,7 +24,9 @@ A logical URI system with uniform ways to fetch and manipulate data is what make
 In REST architecture, there is the concept of safe and idempotent methods.
 Safe methods are the ones that do not modify resources. An example include GET and HEAD.
 An idempotent method is a method that produces the same results no matter how many times is executed. These are GET, PUT and DELETE.
-2 . Representations
+
+
+-2 . Representations
 
 Restful services focus on resources and providing access to the resources.
 A resource can be easily thought of as an object in OOP.
@@ -32,16 +34,22 @@ This is the first thing to do while designing RESTful services is identifying di
 Once the resources are identified, the representation is the next course of action
 Unlike SOAP which restricts us to use XML to represent the data, with REST we can use JSON or XML.
 Usually, JSON is the preferred method for representing the resources to be called by mobile or web clients, But XML can be used to represent more complex resources.
-3. Messages
+
+
+-3. Messages
 
 The client and the server talk to each other via messages in which the cleint sends a message to the server which is often called a request and the server sends back a response
 Apart from the actual data exchanged between the client and the server in the form of request and response body, there are some metadata exchanged by the client and the server in the form of request and response headers.
-4. Links between resources
+
+
+-4. Links between resources
 
 A resource is a fundamental concept in the world of REST architecture.
 A resource is an object with a type, associated data, and relationships to other resources alongside a set of methods that can be executed on it.
 This resource in a REST API can contain a link to other resources which should drive the process flow.
-5. Caching
+
+
+-5. Caching
 
 Caching is a technique that stores a copy of a given resource, and serves it back when requested saving database calls and processing time. Caching can be configured to cache data in minutes, hours, and days, whereby after the configured time expires the cached data gets deleted.
 It can be done at different levels, like the client, the server, or a middleware proxy server.
