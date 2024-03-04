@@ -8,7 +8,7 @@ Let's understand the meaning of each word in the REST acronym.
  Transfer means carry data between consumer and provider using the HTTP protocol
  
 ![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/rest-api.png/)
-![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/rest-api.png/)
+![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/1622930986964.png)
 
 
 ## Features of REST Overview
