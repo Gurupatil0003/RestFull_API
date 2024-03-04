@@ -32,3 +32,7 @@
     {"firstName":"Peter", "lastName":"Jones"}
 ]
 ```
+## jsonify
+
+- jsonify is a function provided by Flask for JSON serialization. 
+- It converts a Python dictionary into a JSON response object that can be returned from a Flask route or view function.
