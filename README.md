@@ -68,17 +68,17 @@ Session state is therefore kept entirely on the client
 This helps you analyze the flaws in design before actual implementation.
 This helps the developers to choose the right kind of platforms and tools to build upon making sure the same system can be scaled for more users later.
 
-##2. Spec-Driven Development
+## 2. Spec-Driven Development
 
 This enforces API design using definition, and not just the code, which ensures that the changes are made to the codebase while API design is intact.
 
-##3. Prototyping
+## 3. Prototyping
 
 Once the API specs are put in place, prototyping helps you visualize the API before actual development by letting the developers create mock API to help them understand every potential aspect of the API
 ## 5. Authentication and Authorization
 
 Authentication involves the verification process to know who the person is while authorization involves authoring an authenticated user to keep a check on resources allowed to access using Access Control List(ACL)
-##6. SQL Databases
+## 6. SQL Databases
 
 SQL databases use SQL for data manipulation and definition.
 SQL systems work great when the data in use needs to be relational and the schema is predefined.
