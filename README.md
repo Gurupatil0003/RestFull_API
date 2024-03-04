@@ -9,7 +9,7 @@ Let's understand the meaning of each word in the REST acronym.
  
 ![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/rest-api.png/)
 ![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/1622930986964.png)
-
+![Example Image](https://github.com/Gurupatil0003/RestFull_API/blob/master/api_types.png)
 
 ## Features of REST Overview
 
