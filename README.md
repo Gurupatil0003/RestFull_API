@@ -218,8 +218,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-### A program that creates a simple RESTful API that returns a list of users in JSON
-format.
+### A program that creates a simple RESTful API that returns a list of users in JSON format.
 ```python
 from flask import Flask, jsonify
 
