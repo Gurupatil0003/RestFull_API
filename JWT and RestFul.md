@@ -47,7 +47,7 @@ if __name__ == "__main__":
 python app.py
 
 ```
-
+HTTPie
 ```python
 We can see this in action using <a href="HTTPie">HTTP</a>.
 
