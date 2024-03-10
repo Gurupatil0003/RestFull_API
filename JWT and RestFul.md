@@ -49,12 +49,12 @@ python app.py
 ```
 
 ```python
-We can see this in action using HTTPie.
-
-
-```
+We can see this in action using <a href="HTTPie">HTTP</a>.
 
 ```
+
+
+```python
 ### http method for Get method
 ```python
 http GET :5000/protected
