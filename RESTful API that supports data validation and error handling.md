@@ -61,9 +61,9 @@ if __name__ == '__main__':
 python app.py
 
 ```
+### Use Postman to perform other operation
 
-
-# here are some example HTTP commands using curl to interact with the RESTful API:
+### here are some example HTTP commands using curl to interact with the RESTful API
 
 ### GET All Users:
 ```python
