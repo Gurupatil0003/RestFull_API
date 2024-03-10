@@ -41,6 +41,19 @@ def protected():
 if __name__ == "__main__":
     app.run()
 
+
+### Run your application
+```python
+python app.py
+
+```
+
+```python
+We can see this in action using HTTPie.
+
+
+```
+
 ```
 ### http method for Get method
 ```python
