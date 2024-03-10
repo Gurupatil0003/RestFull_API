@@ -47,10 +47,10 @@ if __name__ == "__main__":
 python app.py
 
 ```
-[HTTPie](https://httpie.io/)
+## Here We are Http commands [HTTPie](https://httpie.io/)
 
 ```python
-We can see this in action using [HTTPie](https://httpie.io/)
+We can see this in action using HTTPi
 
 
 ```
