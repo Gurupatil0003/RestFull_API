@@ -42,12 +42,12 @@ if __name__ == "__main__":
     app.run()
 
 ```
-###http method for Get method
+### http method for Get method
 ```python
 http GET :5000/protected
 ```
 
-###Output After Executing the above Code
+### Output After Executing the above Code
 ```python
 HTTP/1.0 401 UNAUTHORIZED
 Content-Length: 39
@@ -60,12 +60,12 @@ Server: Werkzeug/1.0.1 Python/3.8.6
 }
 ```
 
-###Post methos using http 
+### Post methos using http 
 ```python 
 http POST :5000/login username=test password=test
 ```
 
-#After Excecution output
+### After Excecution output
 ```python
 HTTP/1.0 200 OK
 Content-Length: 288
