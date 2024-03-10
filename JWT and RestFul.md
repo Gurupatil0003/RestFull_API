@@ -47,9 +47,11 @@ if __name__ == "__main__":
 python app.py
 
 ```
-HTTPie
+[HTTPie](https://httpie.io/)
+
 ```python
-We can see this in action using <a href="HTTPie">HTTP</a>.
+We can see this in action using [HTTPie](https://httpie.io/)
+
 
 ```
 
