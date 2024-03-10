@@ -67,8 +67,8 @@ python app.py
 
 ### GET All Users:
 ```python
-
 curl http://127.0.0.1:5000/users
+```
 
 ### GET a Specific User:
 
@@ -80,7 +80,6 @@ curl http://127.0.0.1:5000/users/1
 ```
 ### POST a New User:
 
-```
 ```python
 
 curl -X POST -H "Content-Type: application/json" -d '{"id": 4, "name": "David", "age": 40}' http://127.0.0.1:5000/users
