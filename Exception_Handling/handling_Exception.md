@@ -85,3 +85,6 @@ if __name__ == '__main__':
 
 - When you raise a CustomException within a Flask route, Flask will automatically invoke the handle_custom_exception function to handle it, returning a JSON response with the appropriate error message and status 
  code.
+
+
+You can find the Article in the [Article](https://medium.com/p/ae623cd5ecd8).
