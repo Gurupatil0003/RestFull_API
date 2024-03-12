@@ -30,20 +30,75 @@ Another option for versioning a REST API is to include the version number as a q
 
 This is a straightforward way of versioning an API from an implementation point of view.
 
-Pros: It’s a straightforward way to version an API, and it’s easy to default to the latest version
-Cons: Query parameters are more difficult to use for routing requests to the proper API version
+~~~python
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    version = request.args.get('version')
+    
+    if version == 'v1':
+        # Logic for version 1
+        return jsonify({'data': 'Version 1'})
+    elif version == 'v2':
+        # Logic for version 2
+        return jsonify({'data': 'Version 2'})
+    else:
+        return jsonify({'error': 'Invalid version specified'}), 400
+
+if __name__ == '__main__':
+    app.run(debug=True)
+~~~
+
+#### Try below url for access the Version 
+~~~python
+/api/data?version=v1
+~~~
+- Pros: It’s a straightforward way to version an API, and it’s easy to default to the latest version
+- Cons: Query parameters are more difficult to use for routing requests to the proper API version
 
 ### 3. Versioning through custom headers
 curl -H “Accepts-version: 1.0”
 http://www.example.com/api/products
 
 REST APIs can also be versioned by providing custom headers with the version number included as an attribute.The main difference between this approach and the two previous ones is that it doesn’t clutter the URI with versioning information.
+~~~python
+from flask import Flask, request, jsonify
 
-Pros: It doesn’t clutter the URI with versioning information
-Cons: It requires custom headers
+app = Flask(__name__)
 
-###
-4. Versioning through content negotiation
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    version = request.headers.get('X-API-Version')
+    
+    if version == 'v1':
+        # Logic for version 1
+        return jsonify({'data': 'Version 1'})
+    elif version == 'v2':
+        # Logic for version 2
+        return jsonify({'data': 'Version 2'})
+    else:
+        return jsonify({'error': 'Invalid version specified'}), 400
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+~~~
+
+~~~python
+GET /api/data HTTP/1.1
+Host: example.com
+X-API-Version: v1
+
+
+~~~
+
+- Pros: It doesn’t clutter the URI with versioning information
+- Cons: It requires custom headers
+
+### 4. Versioning through content negotiation
 curl -H “Accept: application/vnd.xm.device+json; version=1” http://www.example.com/api/products
 
 The last strategy we are addressing is versioning through content negotiation.
@@ -52,7 +107,41 @@ This approach allows us to version a single resource representation instead of v
 
 One of the drawbacks of this approach is that it is less accessible than URI-versioned APIs: Requiring HTTP headers with media types makes it more difficult to test and explore the API using a browser.
 
-Pros: Allows us to version a single resource representation instead of versioning the entire API, which gives us a more granular control over versioning. Creates a smaller footprint. Doesn’t require implementing URI routing rules.
-Cons: Requiring HTTP headers with media types makes it more difficult to test and explore the API using a browser
-Summary
+~~~python
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    accept_header = request.headers.get('Accept')
+    
+    if 'application/vnd.company.v1+json' in accept_header:
+        # Logic for version 1
+        return jsonify({'data': 'Version 1'})
+    elif 'application/vnd.company.v2+json' in accept_header:
+        # Logic for version 2
+        return jsonify({'data': 'Version 2'})
+    else:
+        return jsonify({'error': 'Unsupported version requested'}), 406
+
+if __name__ == '__main__':
+    app.run(debug=True)
+~~~
+
+~~~python
+
+GET /api/data HTTP/1.1
+Host: example.com
+Accept: application/vnd.company.v1+json
+
+
+~~~
+    
+
+- Pros: Allows us to version a single resource representation instead of versioning the entire API, which gives us a more granular control over versioning. Creates a smaller footprint. Doesn’t require implementing URI routing rules.
+
+- Cons: Requiring HTTP headers with media types makes it more difficult to test and explore the API using a browser
+
+### Summary
 Versioning is a crucial part of API design. It gives developers the ability to improve their API without breaking the client’s applications when new updates are rolled out.
