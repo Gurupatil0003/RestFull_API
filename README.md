@@ -400,3 +400,63 @@ api.add_resource(UserResource, '/user')
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+~~~python
+
+from flask import Flask, jsonify, request, abort
+
+app = Flask(__name__)
+
+# Sample books data
+books = [
+    {"id": 1, "title": "Book A", "author": "Author A", "year": 2000},
+    {"id": 2, "title": "Book B", "author": "Author B", "year": 2010}
+]
+
+# Get all books
+@app.route('/books', methods=['GET'])
+def get_books():
+    return jsonify(books)
+
+# Add a new book
+@app.route('/books', methods=['POST'])
+def add_book():
+    if not request.json or 'title' not in request.json:
+        abort(400)
+    book = {
+        'id': books[-1]['id'] + 1 if books else 1,
+        'title': request.json['title'],
+        'author': request.json.get('author', "Unknown"),
+        'year': request.json.get('year', "N/A")
+    }
+    books.append(book)
+    return jsonify({'message': 'Book added', 'book': book}), 201
+
+# Get, update, or delete a book by ID
+@app.route('/books/<int:book_id>', methods=['GET', 'PUT', 'DELETE'])
+def book_operations(book_id):
+    book = next((b for b in books if b['id'] == book_id), None)
+    if not book:
+        abort(404)
+
+    if request.method == 'GET':
+        return jsonify(book)
+    
+    if request.method == 'PUT':
+        if not request.json:
+            abort(400)
+        book.update({
+            'title': request.json.get('title', book['title']),
+            'author': request.json.get('author', book['author']),
+            'year': request.json.get('year', book['year'])
+        })
+        return jsonify({'message': 'Book updated', 'book': book})
+    
+    books.remove(book)
+    return jsonify({'message': 'Book deleted'}), 204
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+~~~
