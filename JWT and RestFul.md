@@ -47,6 +47,15 @@ if __name__ == "__main__":
 python app.py
 
 ```
+
+```python
+{
+  "username": "test",
+  "password": "test"
+}
+
+
+```
 ## Here We are Http commands [HTTPie](https://httpie.io/)
 
 ```python
