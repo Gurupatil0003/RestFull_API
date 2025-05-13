@@ -1261,4 +1261,39 @@ d5ffbd3 c21: added log file
 67c2dd9 more changes
 ef481f9 added js file and appended learnings
 47dcbc2 modifird main.py for even check
+
+
+myenv) C:\Users\LENOVO\Downloads\New folder (2)>git branch
+  beta-feature
+  fea
+* master
+  modify
+
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>git branch
+  beta-feature
+  fea
+* master
+  modify
+
+* master
+  modify
+
+
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>
+
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>git switch beta-feature
+Switched to branch 'beta-feature'
+
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>git merge fea
+Merge made by the 'ort' strategy.
+ work.py | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>git commit -m "Merged fea into beta-feature"
+On branch beta-feature
+nothing to commit, working tree clean
+
+(myenv) C:\Users\LENOVO\Downloads\New folder (2)>git branch -d fea
+Deleted branch fea (was 3d671a0).
 1505a68 First commit
